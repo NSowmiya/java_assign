@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ExamEligibilityChecker {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input for the number of classes held and attended
+        System.out.print("Enter the number of classes held: ");
+        int totalClasses = scanner.nextInt();
+
+        System.out.print("Enter the number of classes attended: ");
+        int attendedClasses = scanner.nextInt();
+
+        // Calculate the percentage of classes attended
+        double attendancePercentage = (double) attendedClasses / totalClasses * 100;
+
+        // Print the percentage of classes attended
+        System.out.println("Percentage of classes attended: " + attendancePercentage + "%");
+
+        // Check eligibility based on attendance and medical cause
+        if (attendancePercentage >= 75) {
+            System.out.println("Student is allowed to sit in the exam.");
+        } else {
+            // Ask the user if there is a medical cause
+            System.out.print("Do you have a medical cause? (Enter 'Y' or 'N'): ");
+            char medicalCause = scanner.next().charAt(0);
+
+            if (medicalCause == 'Y' || medicalCause == 'y') {
+                System.out.println("Student is allowed to sit in the exam due to a medical cause.");
+            } else {
+                System.out.println("Student is not allowed to sit in the exam.");
+            }
+        }
+
+        // Close the Scanner to avoid resource leak
+        scanner.close();
+    }
+}

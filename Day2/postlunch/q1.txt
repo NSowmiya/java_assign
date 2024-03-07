@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Intarr {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] integerArray = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter integer " + (i + 1) + ": ");
+            integerArray[i] = scanner.nextInt();
+        }
+
+        scanner.close();
+
+        System.out.println("Integers entered by the user: " + Arrays.toString(integerArray));
+    }
+}
