@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class DigitSumCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input a 5-digit number
+        System.out.print("Enter a 5-digit number: ");
+        int number = scanner.nextInt();
+
+        // Check if the entered number is a 5-digit number
+        if (number >= 10000 && number <= 99999) {
+            // Calculate the sum of the first and the second last digit
+            int firstDigit = number / 10000;
+            int secondLastDigit = (number / 10) % 10;
+            int sum = firstDigit + secondLastDigit;
+
+            // Display the result
+            System.out.println("Sum of the first and the second last digit: " + sum);
+        } else {
+            System.out.println("Invalid input. Please enter a 5-digit number.");
+        }
+
+        // Close the Scanner to avoid resource leaks
+        scanner.close();
+    }
+}
