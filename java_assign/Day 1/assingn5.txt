@@ -1,0 +1,36 @@
+A-USING THIRD VARIABLE
+
+public class SwapWithThirdVariable {
+    public static void main(String[] args) {
+        int a = 6;
+        int b = 8;
+
+        // Using a third variable to swap values
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println("After swapping (using a third variable):");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+
+B - Without Using a Third Variable:
+
+
+public class SwapWithoutThirdVariable {
+    public static void main(String[] args) {
+        int a = 6;
+        int b = 8;
+
+        // Without using a third variable to swap values
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("After swapping (without using a third variable):");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}

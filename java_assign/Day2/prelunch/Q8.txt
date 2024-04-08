@@ -1,0 +1,23 @@
+public class ArmstrongNumbers {
+    public static void main(String[] args) {
+        for (int i = 100; i <= 500; i++) {
+            if (isArmstrong(i)) {
+                System.out.println(i + " is an Armstrong number.");
+            }
+        }
+    }
+
+    
+    private static boolean isArmstrong(int num) {
+        int originalNum = num;
+        int sum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
+        }
+
+        return originalNum == sum;
+    }
+}

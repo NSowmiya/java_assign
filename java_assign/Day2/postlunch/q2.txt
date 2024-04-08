@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class NumSearch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] integerArray = new int[10];
+
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter integer " + (i + 1) + ": ");
+            integerArray[i] = scanner.nextInt();
+        }
+
+        
+        System.out.print("Enter a number to search in the array: ");
+        int searchNumber = scanner.nextInt();
+
+        
+        boolean numberFound = false;
+        for (int value : integerArray) {
+            if (value == searchNumber) {
+                numberFound = true;
+                break;
+            }
+        }
+
+
+        if (numberFound) {
+            System.out.println(searchNumber + " is present in the array.");
+        } else {
+            System.out.println(searchNumber + " is not present in the array.");
+        }
+
+        scanner.close();
+    }
+}

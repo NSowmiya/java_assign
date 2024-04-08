@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class AverageCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize variables
+        int sum = 0;
+        int numberOfIntegers = 10;
+
+        // Take input for 10 integers using a loop
+        for (int i = 1; i <= numberOfIntegers; i++) {
+            System.out.print("Enter integer #" + i + ": ");
+            int currentNumber = scanner.nextInt();
+            sum += currentNumber;
+        }
+
+        // Calculate the average
+        double average = (double) sum / numberOfIntegers;
+
+        // Print the average value
+        System.out.println("Average value: " + average);
+
+        // Close the Scanner to avoid resource leak
+        scanner.close();
+    }
+}
